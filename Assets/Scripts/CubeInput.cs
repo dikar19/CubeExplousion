@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CubeInput : MonoBehaviour
 {
+    
     private Cube cube;  
     private CubeSplitter splitter; 
 
