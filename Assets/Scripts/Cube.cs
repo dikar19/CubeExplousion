@@ -3,7 +3,7 @@ using UnityEngine;
 public class Cube : MonoBehaviour
 {
     [Header("Data")]
-    public GameObject cubePrefab;  
+    public Cube cubePrefab;  
     public float splitChance = 1f; 
 
     [Header("Scale")]

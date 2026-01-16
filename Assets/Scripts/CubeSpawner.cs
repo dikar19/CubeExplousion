@@ -1,24 +1,30 @@
 using UnityEngine;
 
-public static class CubeSpawner
+public class CubeSpawner : MonoBehaviour
 {
-    public static void Spawn(Cube parent, Vector3 origin)
-    {
-        Vector3 spawnPos = origin + Random.insideUnitSphere * 0.3f;
+    [SerializeField] private float spawnRadius = 0.3f;
+    [SerializeField] private float chanceMultiplier = 0.5f;
 
-        GameObject cubeObj = Object.Instantiate(
+    public Cube Spawn(Cube parent, Vector3 origin)
+    {
+        if (parent == null || parent.cubePrefab == null)
+            return null;
+
+        Vector3 spawnPos = origin + Random.insideUnitSphere * spawnRadius;
+
+        Cube cube = Instantiate(
             parent.cubePrefab,
             spawnPos,
             Random.rotation
         );
 
-        cubeObj.transform.localScale = parent.transform.localScale * parent.scaleMultiplier;
-        cubeObj.GetComponent<Renderer>().material.color = Random.ColorHSV();
+        cube.transform.localScale = parent.transform.localScale * parent.scaleMultiplier;
 
-        Cube cube = cubeObj.GetComponent<Cube>();
-        cube.splitChance = parent.splitChance * 0.5f;
+        if (cube.TryGetComponent(out Renderer renderer))
+            renderer.material.color = Random.ColorHSV();
 
-        Rigidbody rb = cubeObj.GetComponent<Rigidbody>();
-        rb.AddExplosionForce(300f, origin, 2f);
+        cube.splitChance = parent.splitChance * chanceMultiplier;
+
+        return cube;
     }
 }
