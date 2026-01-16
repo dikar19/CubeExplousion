@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 7193175468502583071}
   - component: {fileID: 7387162251542935778}
   - component: {fileID: 3754101232248838349}
-  - component: {fileID: 8829884111583025226}
   - component: {fileID: 7771020477879800437}
+  - component: {fileID: 8829884111583025226}
   - component: {fileID: 2020336025220702442}
   - component: {fileID: 894455401141836272}
+  - component: {fileID: 868981404587247561}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -115,18 +116,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8829884111583025226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110892936822444279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756f7ce1f53404b4b86172a1ab3ceb85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CubeSplitter
 --- !u!54 &7771020477879800437
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,6 +143,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8829884111583025226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110892936822444279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756f7ce1f53404b4b86172a1ab3ceb85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSplitter
 --- !u!114 &2020336025220702442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +183,21 @@ MonoBehaviour:
   splitChance: 1
   minScale: 0.2
   scaleMultiplier: 0.5
+  explosionForce: 100
+  explosionRadius: 10
+  explosionUpward: 0.1
+  explosionMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &868981404587247561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110892936822444279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756f7ce1f53404b4b86172a1ab3ceb85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSplitter

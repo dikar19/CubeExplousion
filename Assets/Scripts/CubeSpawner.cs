@@ -17,8 +17,5 @@ public static class CubeSpawner
 
         Cube cube = cubeObj.GetComponent<Cube>();
         cube.splitChance = parent.splitChance * 0.5f;
-
-        Rigidbody rb = cubeObj.GetComponent<Rigidbody>();
-        rb.AddExplosionForce(300f, origin, 2f);
     }
 }
